@@ -1,6 +1,6 @@
 // Lab 8: Raft Elections -- main.go.
 //
-// Run: go run main.go -nodes=5 -kill-leader=true
+// Run: go run -race . -nodes=5 -kill-leader=true
 package main
 
 import (
