@@ -1,0 +1,8 @@
+ANSWER_KEY.md
+*SOLUTION*
+*REFERENCE*
+*.exe
+*.test
+*.out
+.DS_Store
+__pycache__/
