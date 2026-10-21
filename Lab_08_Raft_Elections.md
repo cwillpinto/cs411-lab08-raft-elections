@@ -26,7 +26,7 @@ It's 11:47 PM during quarter close. Your five-node payments ledger cluster just 
 1. In `node.go`, replace the fixed 150ms election timeout with a randomized jitter drawn uniformly from `[150ms, 300ms)` per node, re-rolled every time the timer resets (on election timeout, on granting a vote, and on receiving a valid heartbeat).
 2. Implement the `RequestVote` RPC handler so each node casts at most one vote per term, rejects requests from stale terms, and enforces the log up-to-date check from Part A, Question 3.
 3. Implement the `-kill-leader` CLI flag: once a stable leader has emitted at least 3 consecutive heartbeats, the simulation must terminate that leader's goroutine (simulating a crash) and let the remaining 4 nodes re-elect.
-4. **Verification:** Run `go run -race main.go -nodes=5 -kill-leader=true`. The harness prints `ELECTION_STABLE term=<N> leader=<id>` twice — once for the initial election, once after the induced crash — followed by the **Success Token** `RAFT_LAB8_OK`. If you see it, your implementation is correct.
+4. **Verification:** Run `go run -race . -nodes=5 -kill-leader=true`. The harness prints `ELECTION_STABLE term=<N> leader=<id>` twice — once for the initial election, once after the induced crash — followed by the **Success Token** `RAFT_LAB8_OK`. If you see it, your implementation is correct.
 
 ---
 
